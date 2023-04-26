@@ -26,7 +26,7 @@ export default function Etusivu({navigation}) {
   const LueKoodi = () =>{    
         
     if (koodi == '01' || koodi == 'PET') {
-      setTeksti('Lajittele 01 PET muovinkeräykseen.');
+      setTeksti('Lajittele 01 PET pakkaukset muovinkeräykseen, pantilliset pullot pullonpalautukseen.');
         
     }else if (koodi === '02' || koodi === 'PE-HD') {
         setTeksti('Lajittele 02 PE-HD pakkaukset muovinkeräykseen, muut PE-HD-muoviset tavarat vie Sortti-asemalle.');
@@ -66,7 +66,9 @@ export default function Etusivu({navigation}) {
 
       <View style={styles.vastaus}>
         <Text style={styles.vastaus}>{teksti}</Text>
-      </View>  
+      </View>
+      <Button title='Kaikki koodit'
+      onPress={() => navigation.navigate('Koodit')}/>  
     </View>
   );
 }

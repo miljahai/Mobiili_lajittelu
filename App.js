@@ -4,7 +4,7 @@ import { Button, Header, Icon, Input } from '@rneui/themed';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import Etusivu from './Etusivu';
-import Vastaus from './Vastaus';
+import Koodit from './Koodit';
 
 
 const Stack = createNativeStackNavigator();
@@ -14,7 +14,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='Etusivu' component={Etusivu}/>
-        <Stack.Screen name='Vastaus' component={Vastaus}/>
+        <Stack.Screen name='Koodit' component={Koodit}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
