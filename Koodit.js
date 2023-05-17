@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { Text, View, StyleSheet, ScrollView, Image } from "react-native";
 import { ListItem } from "@rneui/themed";
 import * as Font from 'expo-font';

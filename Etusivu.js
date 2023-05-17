@@ -1,4 +1,4 @@
-import { Button, Header, Icon } from '@rneui/themed';
+import { Button, Icon } from '@rneui/themed';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Image } from 'react-native';
 import * as Font from 'expo-font';
