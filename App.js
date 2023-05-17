@@ -1,21 +1,40 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Button, Header, Icon, Input } from '@rneui/themed';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { FontAwesome } from '@expo/vector-icons';
+import { StyleSheet } from 'react-native';
 import Etusivu from './Etusivu';
 import Koodit from './Koodit';
+import Linkit from './Linkit';
 
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
+
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='Etusivu' component={Etusivu}/>
-        <Stack.Screen name='Koodit' component={Koodit}/>
-      </Stack.Navigator>
+      <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarIcon: ({focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'Haku') {
+            iconName = "search"
+          }
+          else if (route.name === 'Koodit') {
+            iconName = "list-ul"
+          }
+          else if (route.name === 'Lisätietoa') {
+            iconName = "info"
+          }
+          
+          return <FontAwesome name={iconName} size={24} color='green'/>
+        }
+      })}>
+        <Tab.Screen name='Haku' component={Etusivu} options={{headerShown: false}}/>
+        <Tab.Screen name='Koodit' component={Koodit} options={{headerShown: false}}/>
+        <Tab.Screen name='Lisätietoa' component={Linkit} options={{headerShown: false}}/>
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
